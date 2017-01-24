@@ -1,4 +1,5 @@
 import { ChartGradientColors, ChartMargin } from '../models/chart.model';
+import { TableMargin } from '../models/table.model'
 
 export class AppConfig {
   // Grid Config
@@ -16,5 +17,10 @@ export class AppConfig {
   static CHART_GRADIENT_STOPS = {
     'y1': 60,
     'y2': 120,
+  };
+
+  // TABLE Config
+  static TABLE_MARGIN: TableMargin = {
+    top: 16, right: 16, bottom: 32, left: 48
   };
 }

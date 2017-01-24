@@ -16,6 +16,7 @@ import * as gridAction from '../../store/grid/grid.actions';
       <md-grid-tile *ngFor="let tile of tiles$ | async"
         [colspan]="tile.cols" [rowspan]="tile.rows">
         <app-chart-container [tile]="tile"></app-chart-container>
+        <app-table-container [tile]="tile"></app-table-container>
       </md-grid-tile>
     </md-grid-list>
   `,

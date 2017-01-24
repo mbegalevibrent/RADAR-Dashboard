@@ -12,7 +12,7 @@
       "id": 2,
       "rows": 1,
       "title": "PATIENT & DEVICE MONITORING",
-      "type": "empty"
+      "type": "patient-monitoring"
     },
     {
       "cols": 1,

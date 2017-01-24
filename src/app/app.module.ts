@@ -18,6 +18,7 @@ import { UserEffects } from './store/user/user.effects';
 import { UserService } from './services/user.service';
 import { ChartHeartRateEffects } from './store/chart-heart-rate/chart-heart-rate.effects';
 import { ChartModule } from './charts/chart.module';
+import { TableModule } from './tables/table.module';
 import { ConfigEffects } from './store/config/config.effects';
 import { ConfigService } from './services/config.service';
 import { ChartHeartRateService } from './services/chart-heart-rate.service';
@@ -47,6 +48,7 @@ import { ChartHeartRateService } from './services/chart-heart-rate.service';
     // App modules
     AppRoutingModule,
     ChartModule,
+    TableModule,
   ],
   providers: [
     GridService,
