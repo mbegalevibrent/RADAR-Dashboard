@@ -4,27 +4,27 @@ export const MockGrid = [
       "id": 1,
       "rows": 1,
       "title": "STUDY INFO",
-      "type": "empty"
+      "type": "chart-empty"
     },
     {
       "cols": 3,
       "id": 2,
       "rows": 1,
       "title": "PATIENT & DEVICE MONITORING",
-      "type": "empty"
+      "type": "table-patient-monitoring"
     },
     {
       "cols": 1,
       "id": 3,
       "rows": 1,
       "title": "PATIENT INFO",
-      "type": "empty"
+      "type": "chart-empty"
     },
     {
       "cols": 3,
       "id": 4,
       "rows": 1,
       "title": "SENSOR MONITORING",
-      "type": "heart-rate"
+      "type": "chart-heart-rate"
     }
 ];
