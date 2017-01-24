@@ -17,7 +17,7 @@ export const MockGrid = [
       "cols": 1,
       "id": 3,
       "rows": 1,
-      "title": "PATEINT INFO",
+      "title": "PATIENT INFO",
       "type": "empty"
     },
     {
