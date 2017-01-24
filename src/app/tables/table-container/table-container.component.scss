@@ -1,1 +1,37 @@
 @import '../../../styles/common';
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+// Common styles for all charts
+:host /deep/ .app-table {
+  display: block;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+
+  .header {
+    @include font-small;
+
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: $cl-base-40;
+
+    .title {
+      flex: 1 0 auto;
+      margin: 0 16px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex: 1 0 auto;
+    background-color: $cl-base-20;
+  }
+}

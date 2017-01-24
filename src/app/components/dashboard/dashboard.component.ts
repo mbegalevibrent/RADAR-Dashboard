@@ -15,8 +15,8 @@ import * as gridAction from '../../store/grid/grid.actions';
       [cols]="gridCols" rowHeight="fit">
       <md-grid-tile *ngFor="let tile of tiles$ | async"
         [colspan]="tile.cols" [rowspan]="tile.rows">
-        <app-chart-container [tile]="tile"></app-chart-container>
-        <app-table-container [tile]="tile"></app-table-container>
+        <app-chart-container *ngIf="isTileOfType(tile, COMPONENT_TYPE.chart)" [tile]="tile"></app-chart-container>
+        <app-table-container *ngIf="isTileOfType(tile, COMPONENT_TYPE.table)" [tile]="tile"></app-table-container>
       </md-grid-tile>
     </md-grid-list>
   `,
@@ -26,6 +26,11 @@ export class DashboardComponent implements OnInit {
   tiles$: Observable<Tile[]>;
   loading$: Observable<boolean>;
   gridCols = AppConfig.GRID_COLS;
+
+  COMPONENT_TYPE = {
+    chart: 'chart',
+    table: 'table',
+  };
 
   // TODO: update grid when MD adds responsive support
   // [https://github.com/angular/material2/blob/master/src/lib/grid-list/README.md]
@@ -38,5 +43,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new gridAction.Load());
+  }
+
+  isTileOfType(tile, type){
+      if(tile.type.includes(type)){
+          return true;
+      }
+      return false;
   }
 }
