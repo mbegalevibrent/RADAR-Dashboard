@@ -6,7 +6,7 @@ import { Tile } from '../../models/tile.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-table-patient-monitoring *ngIf="isTableOfType(tile, TABLE_TYPE.PM)"
-      [title]="title" class="app-chart"></app-table-patient-monitoring>
+      [title]="title" class="app-table"></app-table-patient-monitoring>
   `,
   styleUrls: ['./table-container.component.scss']
 })

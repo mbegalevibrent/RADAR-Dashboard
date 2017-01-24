@@ -9,7 +9,6 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core
     <div class="title">{{title}}</div>
   </div>
   <div class="container">
-    <p> Test
   </div>
   `,
   styleUrls: ['./table-patient-monitoring.component.scss']
