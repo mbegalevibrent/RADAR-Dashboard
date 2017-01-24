@@ -1,40 +1,32 @@
 {
   "dataset": [
     {
-      "cols": 3,
+      "cols": 1,
       "id": 1,
-      "rows": 2,
-      "title": "Heart Rate Monitoring",
-      "type": "heart-rate"
+      "rows": 1,
+      "title": "STUDY INFO",
+      "type": "empty"
     },
     {
-      "cols": 1,
+      "cols": 3,
       "id": 2,
       "rows": 1,
-      "title": "TBD",
+      "title": "PATIENT & DEVICE MONITORING",
       "type": "empty"
     },
     {
       "cols": 1,
       "id": 3,
       "rows": 1,
-      "title": "TBD",
+      "title": "PATEINT INFO",
       "type": "empty"
     },
     {
-      "cols": 2,
+      "cols": 3,
       "id": 4,
       "rows": 1,
-      "title": "TBD",
-      "type": "empty"
-    },
-    {
-      "cols": 2,
-      "id": 5,
-      "rows": 1,
-      "title": "TBD",
-      "type": "empty"
+      "title": "SENSOR MONITORING",
+      "type": "heart-rate"
     }
   ]
 }
-
