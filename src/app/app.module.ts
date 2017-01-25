@@ -23,6 +23,7 @@ import { ConfigEffects } from './store/config/config.effects';
 import { ConfigService } from './services/config.service';
 import { ChartHeartRateService } from './services/chart-heart-rate.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
