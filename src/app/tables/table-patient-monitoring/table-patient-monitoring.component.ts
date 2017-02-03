@@ -21,38 +21,7 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core
 })
 export class TablePatientMonitoringComponent implements OnInit {
 
-  rows = [
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 1, status: 0, heartRate: 89, temperature: '12˚C' },
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C' },
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C' },
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C' },
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D84', dataRate: 12, status: 0, heartRate: 89, temperature: '12˚C'},
-     { 'Patient ID': '1A47C', deviceId: '1A47C-12D85', dataRate: 3, status: 0, heartRate: 89, temperature: '12˚C'},
-
-
-
-   ];
+  rows = []
    columns = [
      { prop: 'Patient ID' },
      { name: 'Device ID' },
