@@ -1,8 +1,6 @@
 .datatable.material {
-  background: #FFF;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  background: rgba(0,0,0,0);
+  @include font-body-light
   /**
 	 * Shared Styles
 	 */
@@ -19,55 +17,56 @@
 	 * Footer Styles
 	 */ }
   .datatable.material.striped .datatable-row-odd {
-    background: #eee; }
+    background: $cl-white-20; }
   .datatable.material.single-selection .datatable-body-row.active,
   .datatable.material.single-selection .datatable-body-row.active .datatable-row-group, .datatable.material.multi-selection .datatable-body-row.active,
   .datatable.material.multi-selection .datatable-body-row.active .datatable-row-group, .datatable.material.multi-click-selection .datatable-body-row.active,
   .datatable.material.multi-click-selection .datatable-body-row.active .datatable-row-group {
-    background-color: #304FFE;
+    background-color: $cl-white-60;
     color: #FFF; }
   .datatable.material.single-selection .datatable-body-row.active:hover,
   .datatable.material.single-selection .datatable-body-row.active:hover .datatable-row-group, .datatable.material.multi-selection .datatable-body-row.active:hover,
   .datatable.material.multi-selection .datatable-body-row.active:hover .datatable-row-group, .datatable.material.multi-click-selection .datatable-body-row.active:hover,
   .datatable.material.multi-click-selection .datatable-body-row.active:hover .datatable-row-group {
-    background-color: #193AE4;
-    color: #FFF; }
+    background-color: $cl-white-60;
+    color: $cl-white-60; }
   .datatable.material.single-selection .datatable-body-row.active:focus,
   .datatable.material.single-selection .datatable-body-row.active:focus .datatable-row-group, .datatable.material.multi-selection .datatable-body-row.active:focus,
   .datatable.material.multi-selection .datatable-body-row.active:focus .datatable-row-group, .datatable.material.multi-click-selection .datatable-body-row.active:focus,
   .datatable.material.multi-click-selection .datatable-body-row.active:focus .datatable-row-group {
-    background-color: #2041EF;
-    color: #FFF; }
+    background-color: $cl-white-60;
+    color: $cl-white-60; }
   .datatable.material:not(.cell-selection) .datatable-body-row:hover,
   .datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
-    background-color: #eee;
+    background-color: $cl-white-40;
+    color: $cl-base;
     transition-property: background;
     transition-duration: .3s;
     transition-timing-function: linear; }
   .datatable.material:not(.cell-selection) .datatable-body-row:focus,
   .datatable.material:not(.cell-selection) .datatable-body-row:focus .datatable-row-group {
-    background-color: #ddd; }
+    background-color: $cl-white-60; }
   .datatable.material.cell-selection .datatable-body-cell:hover,
   .datatable.material.cell-selection .datatable-body-cell:hover .datatable-row-group {
-    background-color: #eee;
+    background-color: $cl-white-60;
     transition-property: background;
     transition-duration: .3s;
     transition-timing-function: linear; }
   .datatable.material.cell-selection .datatable-body-cell:focus,
   .datatable.material.cell-selection .datatable-body-cell:focus .datatable-row-group {
-    background-color: #ddd; }
+    background-color: $cl-white-60; }
   .datatable.material.cell-selection .datatable-body-cell.active,
   .datatable.material.cell-selection .datatable-body-cell.active .datatable-row-group {
-    background-color: #304FFE;
-    color: #FFF; }
+    background-color: $cl-white-60;
+    color: $cl-white-60; }
   .datatable.material.cell-selection .datatable-body-cell.active:hover,
   .datatable.material.cell-selection .datatable-body-cell.active:hover .datatable-row-group {
-    background-color: #193AE4;
-    color: #FFF; }
+    background-color: $cl-white-60;
+    color: $cl-white-60; }
   .datatable.material.cell-selection .datatable-body-cell.active:focus,
   .datatable.material.cell-selection .datatable-body-cell.active:focus .datatable-row-group {
-    background-color: #2041EF;
-    color: #FFF; }
+    background-color: $cl-white-60;
+    color: $cl-white-60; }
   .datatable.material .empty-row {
     height: 50px;
     text-align: left;
@@ -92,12 +91,12 @@
     background-repeat: repeat-y;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAFklEQVQI12PQkNdi1VTQ5gbSwkAsDQARLAIGtOSFUAAAAABJRU5ErkJggg==); }
   .datatable.material .datatable-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+    border-bottom: 1px solid $cl-base-80; }
     .datatable.material .datatable-header .datatable-header-cell {
       text-align: left;
-      padding: .5rem 1.2rem;
+      padding: .1rem 1.2rem;
       font-weight: 400;
-      color: #757575;
+      color: $cl-font-light;
       vertical-align: bottom; }
       .datatable.material .datatable-header .datatable-header-cell.longpress {
         color: #00E676; }
@@ -106,11 +105,11 @@
     .datatable.material .datatable-header .resize-handle {
       border-right: solid 1px #eee; }
   .datatable.material .datatable-body .datatable-row-detail {
-    background: #f5f5f5;
+    background: $cl-white-10;
     padding: 10px; }
   .datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
     text-align: left;
-    padding: .5rem 1.2rem;
+    padding: .1rem 1.2rem;
     vertical-align: top;
     border-top: 0;
     -webkit-transition: width 0.3s ease;
@@ -146,8 +145,8 @@
         width: 100%;
         height: 5px; }
   .datatable.material .datatable-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    font-size: 16px; }
+    border-top: 1px solid $cl-base-80;
+    @include font-small }
     .datatable.material .datatable-footer .page-count {
       line-height: 50px;
       height: 50px;
@@ -157,10 +156,10 @@
       .datatable.material .datatable-footer .datatable-pager li {
         vertical-align: middle; }
         .datatable.material .datatable-footer .datatable-pager li.disabled a {
-          color: rgba(0, 0, 0, 0.26) !important;
+          color: $cl-white-20 !important;
           background-color: transparent !important; }
         .datatable.material .datatable-footer .datatable-pager li.active a {
-          background-color: rgba(158, 158, 158, 0.2);
+          background-color: $cl-white-20;
           font-weight: bold; }
       .datatable.material .datatable-footer .datatable-pager a {
         height: 22px;
@@ -171,17 +170,16 @@
         margin: 6px 3px;
         text-align: center;
         vertical-align: top;
-        color: rgba(0, 0, 0, 0.54);
+        color: $cl-font-light;
         text-decoration: none;
         vertical-align: bottom; }
         .datatable.material .datatable-footer .datatable-pager a:hover {
-          color: rgba(0, 0, 0, 0.75);
-          background-color: rgba(158, 158, 158, 0.2); }
+          color: $cl-base-80;
+          background-color: $cl-white-60; }
       .datatable.material .datatable-footer .datatable-pager .icon-left,
       .datatable.material .datatable-footer .datatable-pager .icon-skip,
       .datatable.material .datatable-footer .datatable-pager .icon-right,
       .datatable.material .datatable-footer .datatable-pager .icon-prev {
-        font-size: 20px;
         line-height: 20px;
         padding: 0 3px; }
 
@@ -211,14 +209,14 @@
       z-index: 1;
       width: 1rem;
       height: 1rem;
-      border: 2px solid #f2f2f2; }
+      border: 2px solid $cl-white-40; }
     .datatable-checkbox input[type='checkbox']:checked:before {
       -webkit-transform: rotate(-45deg);
       -moz-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
       height: .5rem;
-      border-color: #009688;
+      border-color: $cl-white-40;
       border-top-style: none;
       border-right-style: none; }
     .datatable-checkbox input[type='checkbox']:after {
@@ -228,7 +226,7 @@
       left: 0;
       width: 1rem;
       height: 1rem;
-      background: #fff;
+      background: $cl-white-80;
       cursor: pointer; }
 
 /**

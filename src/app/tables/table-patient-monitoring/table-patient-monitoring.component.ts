@@ -16,19 +16,19 @@ import * as pmAction from '../../store/table-patient-monitoring/table-patient-mo
     <ngx-datatable
         #PatientMonitoringTable
         class='material expandable'
-        [columnMode]="'force'"
-        [headerHeight]="30"
-        [footerHeight]="30"
-        [rowHeight]="30"
+        [columnMode]="'standard'"
+        [headerHeight]="25"
+        [footerHeight]="25"
+        [rowHeight]="24"
         [scrollbarV]="30"
         [rows]='rowsWorkaround'>
 
          <ngx-datatable-column
-          [width]="50"
           [resizeable]="false"
           [sortable]="false"
           [draggable]="false"
-          [canAutoResize]="false">
+
+          [flexGrow]="0">
 
           <template let-row="row" ngx-datatable-cell-template>
             <a
@@ -36,49 +36,56 @@ import * as pmAction from '../../store/table-patient-monitoring/table-patient-mo
               [class.icon-right]="!row.$$expanded"
               [class.icon-down]="row.$$expanded"
               title="Expand/Collapse Row"
-              (click)="toggleExpandRow(row)"> >
+              (click)="toggleExpandRow(row)"><span class="md-select-arrow"></span>
             </a>
           </template>
 
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Patient ID" width="80">
+        <ngx-datatable-column name="Patient ID"  [flexGrow]="1">
           <template let-row="row" ngx-datatable-cell-template>
             {{row.patientId}}
           </template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Device ID" width="80">
+        <ngx-datatable-column name="Device ID"  [flexGrow]="1">
           <template let-row="row"  ngx-datatable-cell-template>
             {{row.deviceId}}
           </template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Device Type" width="80">
+        <ngx-datatable-column name="Device Type" [flexGrow]="1">
           <template let-row="row" ngx-datatable-cell-template>
             {{row.deviceName}}
           </template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Status" width="80">
+        <ngx-datatable-column name="Status"  [flexGrow]="0">
           <template let-row="row" ngx-datatable-cell-template>
-            {{row.status}}
+            <div class="status"
+                [class.success]="isConnected(row.status)"
+                [class.error]="!isConnected(row.status)"></div>
           </template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Transmit Rate" width="80">
+        <ngx-datatable-column name="Transmit Rate"  [flexGrow]="3">
           <template let-row="row"  ngx-datatable-cell-template>
             {{row.dataRate}}
           </template>
         </ngx-datatable-column>
 
         <!-- Row Detail Template -->
-        <ngx-datatable-row-detail [rowHeight]="80" #detailRow>
+        <ngx-datatable-row-detail [rowHeight]="60" #detailRow>
           <template let-row="row" ngx-datatable-row-detail-template>
             <div style="padding-left:35px;">
-              <div><i>Sensor Details</i></div>
-              <span #sensorInfo *ngFor="let sensor of row.sensors" (click)="selectSensor(sensor.name)">
-                {{sensor.name}} {{sensor.status}}
+              <div>Sensor Details:</div>
+              <span class="sensorInfo" *ngFor="let sensor of row.sensors" (click)="selectSensor(sensor.name)">
+                <div>
+                  <div class="status sensorInfoSingle"
+                  [class.success]="isConnected(sensor.status)"
+                  [class.error]="!isConnected(sensor.status)"></div>
+                  {{sensor.name}}
+                </div>
               </span>
             </div>
           </template>
@@ -146,6 +153,14 @@ export class TablePatientMonitoringComponent implements OnInit {
    this.store.dispatch(new pmAction.SelectedSensor({
      sensor: sensorName
    }));
+ }
+
+ isConnected(status){
+   if(status === "CONNECTED"){
+     return true;
+   } else {
+     return false;
+   }
  }
 
 }
