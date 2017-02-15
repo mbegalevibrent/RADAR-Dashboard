@@ -12,12 +12,14 @@ import * as fromGrid from './grid/grid.reducer';
 import * as fromUser from './user/user.reducer';
 import * as fromConfig from './config/config.reducer';
 import * as fromChartHR from './chart-heart-rate/chart-heart-rate.reducer';
+import * as fromTablePM from './table-patient-monitoring/table-patient-monitoring.reducer'
 
 export interface State {
   grid: fromGrid.State;
   user: fromUser.State;
   config: fromConfig.State;
   chartHR: fromChartHR.State;
+  tablePM: fromTablePM.State;
 }
 
 const reducers = {
@@ -25,6 +27,7 @@ const reducers = {
   user: fromUser.reducer,
   config: fromConfig.reducer,
   chartHR: fromChartHR.reducer,
+  tablePM: fromTablePM.reducer,
 };
 
 const developmentReducer: ActionReducer<State> =
@@ -68,3 +71,10 @@ export function getChartHRState(state$: Observable<State>) {
 }
 export const getChartHRLoading = compose(fromChartHR.getLoading, getChartHRState);
 export const getChartHRData = compose(fromChartHR.getData, getChartHRState);
+
+// TablePM Selectors
+export function getTablePmState(state$: Observable<State>) {
+  return state$.select(s => s.tablePM);
+}
+export const getTablePmLoading = compose(fromTablePM.getLoading, getTablePmState);
+export const getTablePmData = compose(fromTablePM.getData, getTablePmState);
