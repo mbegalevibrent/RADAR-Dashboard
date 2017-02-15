@@ -13,13 +13,6 @@ import * as pmAction from '../../store/table-patient-monitoring/table-patient-mo
     <div class="title">{{title}}</div>
   </div>
   <div class="container">
-    <!--ngx-datatable
-      [rows]="rows$ | async"
-      [columns]="columns"
-      [headerHeight]="50"
-      [rowHeight]="25"
-      [scrollbarV]="true">
-    </ngx-datatable -->
     <ngx-datatable
         #PatientMonitoringTable
         class='material expandable'
@@ -114,7 +107,20 @@ export class TablePatientMonitoringComponent implements OnInit {
       .map(data => data || [])
       .subscribe(rowsWorkaround => {
         this.rowsWorkaround = JSON.parse(JSON.stringify(<TablePatientMonitoringData[]>rowsWorkaround))
+        this.submitInitalSelectedParameters(this.rowsWorkaround);
       });
+  }
+
+  submitInitalSelectedParameters(parameters){
+    if(parameters.length > 0){
+      this.store.dispatch(new pmAction.SelectedPatient({
+        patientId: parameters[0].patientId,
+        deviceId: parameters[0].deviceId,
+      }));
+      this.store.dispatch(new pmAction.SelectedSensor({
+        sensor: parameters[0].sensors[0].name,
+      }));
+    }
   }
 
   ngOnInit() {
@@ -130,11 +136,16 @@ export class TablePatientMonitoringComponent implements OnInit {
  }
 
  selectPatient(patientDetails){
-   console.log(patientDetails);
+   this.store.dispatch(new pmAction.SelectedPatient({
+     patientId: patientDetails.patientId,
+     deviceId: patientDetails.deviceId
+   }));
  }
 
  selectSensor(sensorName){
-   console.log(sensorName);
+   this.store.dispatch(new pmAction.SelectedSensor({
+     sensor: sensorName
+   }));
  }
 
 }

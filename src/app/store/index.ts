@@ -78,3 +78,4 @@ export function getTablePmState(state$: Observable<State>) {
 }
 export const getTablePmLoading = compose(fromTablePM.getLoading, getTablePmState);
 export const getTablePmData = compose(fromTablePM.getData, getTablePmState);
+export const getSelectedParameters = compose(fromTablePM.getSelectedParameters, getTablePmState);
