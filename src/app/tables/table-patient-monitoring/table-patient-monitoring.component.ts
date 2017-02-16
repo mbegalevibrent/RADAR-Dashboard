@@ -36,7 +36,7 @@ import * as pmAction from '../../store/table-patient-monitoring/table-patient-mo
               [class.icon-right]="!row.$$expanded"
               [class.icon-down]="row.$$expanded"
               title="Expand/Collapse Row"
-              (click)="toggleExpandRow(row)"><span class="md-select-arrow"></span>
+              (click)="toggleExpandRow(row)"><span class="md-select-arrow">></span>
             </a>
           </template>
 

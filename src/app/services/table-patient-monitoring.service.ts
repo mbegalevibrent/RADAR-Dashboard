@@ -27,7 +27,7 @@ export class TablePatientMonitoringService {
     //return this.getPatientDevicesData()
   }
 
-  getPatientDevicesData(){
+  /*getPatientDevicesData(){
     return this.http.get(`${PARAMS.API_URI}/User/GetAllPatients`)
       .map(res => res.json().patients)
       .map((patient) => {
@@ -47,7 +47,7 @@ export class TablePatientMonitoringService {
         })
 
       })
-  }
+  }*/
 
 /*
   getAllPatientDevices(){

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
@@ -43,6 +44,7 @@ import { TableModule } from './tables/table.module';
     BrowserModule,
     HttpModule,
     MaterialModule.forRoot(),
+    CommonModule,
 
     // ngrx/store
     StoreModule.provideStore(reducer),
