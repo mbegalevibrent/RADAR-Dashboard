@@ -7,6 +7,7 @@ export class ErrorService {
 
   static handleError(error: Response | any) {
     // TODO: add remote error logging
+    console.log(error)
     return Observable.throw(error);
   }
 }

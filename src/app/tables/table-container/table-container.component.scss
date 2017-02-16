@@ -1,0 +1,73 @@
+@import '../../../styles/common';
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+// Common styles for all tables
+:host /deep/ .app-table {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+
+  .header {
+    @include font-small;
+
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: $cl-base-40;
+
+    .title {
+      flex: 1 0 auto;
+      margin: 0 16px;
+    }
+
+  }
+
+  .container {
+    display: flex;
+    flex: 1 0 auto;
+    background-color: $cl-base-20;
+  }
+
+  .status {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $cl-status-neutral;
+  }
+  .status.success {
+    background-color: $cl-status-success;
+  }
+  .status.warning {
+    background-color: $cl-status-warning;
+  }
+  .status.error {
+    background-color: $cl-status-error;
+  }
+
+  .sensorInfo {
+    float: left;
+    width: 10%;
+    cursor: pointer;
+  }
+  .sensorInfo:hover{
+    background-color: $cl-white-40;
+    transition-property: background;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+  }
+
+  .sensorInfoSingle {
+    float: left;
+  }
+
+
+}

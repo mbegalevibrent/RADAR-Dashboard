@@ -1,4 +1,5 @@
 import { ChartGradientColors, ChartMargin } from '../models/chart.model';
+import { TableMargin } from '../models/table.model'
 
 export class AppConfig {
   // Grid Config
@@ -17,6 +18,7 @@ export class AppConfig {
     'y1': 60,
     'y2': 120,
   };
+  
   static CHART_CATEGORICAL_COLORS = [
     // Graph Colors as in 'common.scss'
     '#ffc',
@@ -34,4 +36,9 @@ export class AppConfig {
     // '#f2acf2',
     // '#b1acf2',
   ];
+
+  // TABLE Config
+  static TABLE_MARGIN: TableMargin = {
+    top: 16, right: 16, bottom: 32, left: 48
+  };
 }

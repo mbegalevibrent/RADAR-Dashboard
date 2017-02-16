@@ -13,6 +13,7 @@ import * as fromUser from './user/user.reducer';
 import * as fromConfig from './config/config.reducer';
 import * as fromChartHR from './chart-heart-rate/chart-heart-rate.reducer';
 import * as fromChartAC from './chart-acceleration/chart-acceleration.reducer';
+import * as fromTablePM from './table-patient-monitoring/table-patient-monitoring.reducer'
 
 export interface State {
   grid: fromGrid.State;
@@ -20,6 +21,7 @@ export interface State {
   config: fromConfig.State;
   chartHR: fromChartHR.State;
   chartAC: fromChartAC.State;
+  tablePM: fromTablePM.State;
 }
 
 const reducers = {
@@ -28,6 +30,7 @@ const reducers = {
   config: fromConfig.reducer,
   chartHR: fromChartHR.reducer,
   chartAC: fromChartAC.reducer,
+  tablePM: fromTablePM.reducer,
 };
 
 const developmentReducer: ActionReducer<State> =
@@ -78,3 +81,11 @@ export function getChartACState(state$: Observable<State>) {
 }
 export const getChartACLoading = compose(fromChartAC.getLoading, getChartACState);
 export const getChartACData = compose(fromChartAC.getData, getChartACState);
+
+// TablePM Selectors
+export function getTablePmState(state$: Observable<State>) {
+  return state$.select(s => s.tablePM);
+}
+export const getTablePmLoading = compose(fromTablePM.getLoading, getTablePmState);
+export const getTablePmData = compose(fromTablePM.getData, getTablePmState);
+export const getSelectedParameters = compose(fromTablePM.getSelectedParameters, getTablePmState);
